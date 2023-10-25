@@ -1,5 +1,3 @@
-import importlib
-import os
 from flask_restful import Api, Resource
 
 from pylon.core.tools import log
