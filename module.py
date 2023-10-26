@@ -17,9 +17,11 @@
 
 """ Module """
 from pylon.core.tools import log  # pylint: disable=E0611,E0401
-from pylon.core.tools import module  # pylint: disable=E0611,E0401
+from pylon.core.tools import module
 
 from tools import theme
+
+from .utils import init_api
 
 
 class Module(module.ModuleModel):
@@ -34,7 +36,8 @@ class Module(module.ModuleModel):
         log.info('Initializing Azure OpenAI Connector Plugin')
 
         self.descriptor.init_blueprint()
-        self.descriptor.init_api()
+        # self.descriptor.init_api()
+        init_api(self.context.api)
 
 
     def deinit(self):  # pylint: disable=R0201
