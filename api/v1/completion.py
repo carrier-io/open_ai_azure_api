@@ -55,7 +55,7 @@ class CompletionAPI(Resource):
             return str(result['error']), 400
 
         if request_data.get('stream'):
-            stream = lambda resp: (f'data: {chunk}\n\n' for chunk in resp)
+            stream = lambda resp: ('data: {chunk}\n\n'.format(chunk=dumps(item)) for item in resp)
             return Response(stream(result['response']), mimetype='text/event-stream')
 
         return result['response'], 200
