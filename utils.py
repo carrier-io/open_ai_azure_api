@@ -28,5 +28,3 @@ def init_api(api: Api):
     _add_resource_to_api(api, ChatCompletionAPI)
     _add_resource_to_api(api, CompletionAPI)
     _add_resource_to_api(api, ModelsAPI)
-
-
