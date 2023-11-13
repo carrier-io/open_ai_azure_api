@@ -1,3 +1,4 @@
+from json import dumps
 from flask import request, Response
 from flask_restful import Resource
 from tools import api_tools
